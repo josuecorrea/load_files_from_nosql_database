@@ -1,7 +1,6 @@
 package com.load.files.client.controller;
 
 import com.load.files.client.service.ILoadService;
-import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -20,6 +19,6 @@ public class LoadController {
     @PostMapping("load")
     @ResponseStatus(HttpStatus.ACCEPTED)
     public void load(@RequestBody String filesPath) throws IOException {
-            _loadService.LoadExecute(filesPath);
+            _loadService.loadExecute(filesPath);
     }
 }

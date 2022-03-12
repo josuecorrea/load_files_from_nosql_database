@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
 public interface IModelBuilder {
-    List<IDefaultModel> Create(List<String> lines, DocumentType type) throws ClassNotFoundException;
+    List<IDefaultModel> Create(List<String> lines, DocumentType type);
 }

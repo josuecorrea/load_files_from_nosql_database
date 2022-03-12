@@ -11,8 +11,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.io.File;
-
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -51,7 +49,9 @@ public class LoadService implements ILoadService {
     private void transformData(List<String> lines, String fileName){
         DocumentType documentType = _fileRegister.getDocumentType(fileName);
 
-        createModel(lines, documentType);
+        var result = createModel(lines, documentType);
+
+        //call insert cache
     }
 
     private List<IDefaultModel> createModel (List<String> lines, DocumentType type){
